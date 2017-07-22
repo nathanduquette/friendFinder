@@ -1,7 +1,7 @@
 var friends = [
 	{
-	name: "nathan duquette",
-    photo: "https://img.buzzfeed.com/buzzfeed-static/static/2017-03/7/13/campaign_images/buzzfeed-prod-fastlane-03/this-quiz-will-reveal-which-friends-character-you-2-8214-1488911847-17_dblbig.jpg",
+	name: "Drilmp Linkwaltzerite",
+    photo: "http://www.celebheights.com/starimages/dan-yeager.jpg",
     scores: [
     	"1",
     	"5",
@@ -14,7 +14,55 @@ var friends = [
     	"5",
     	"4",
     	]
-	}
+	},
+    {
+    name: "Bram Churdsontundtler",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bram_Moolenaar_in_2007.jpg/220px-Bram_Moolenaar_in_2007.jpg",
+    scores: [
+        "1",
+        "4",
+        "1",
+        "5",
+        "2",
+        "3",
+        "4",
+        "1",
+        "5",
+        "2",
+        ]
+    },
+    {
+    name: "Kurnt Nimcklintall",
+    photo: "https://pbs.twimg.com/profile_images/1605785476/OUI_400x400.jpg",
+    scores: [
+        "5",
+        "1",
+        "3",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "1",
+        "2",
+        ]
+    },
+    {
+    name: "Zenphole Dunnturkindleson",
+    photo: "http://www.thetick.ws/images/hippies.jpg",
+    scores: [
+        "2",
+        "3",
+        "3",
+        "2",
+        "1",
+        "1",
+        "2",
+        "3",
+        "3",
+        "2",
+        ]
+    }
    
 ];
 

@@ -9,23 +9,25 @@ var friends = require('../data/friends.js');
 module.exports = function(app) {
 
     //Tables data route
-    app.get("/data/friends", function(req, res) {
+    app.get("/api/friends", function(req, res) {
         return res.json(friends);
     });
 
     //Create new friend
-    app.post("/data/friends", function(req, res) {
+    app.post("/api/friends", function(req, res) {
 
         //Empty array to push matched friend
         var bestFriend = {
             name: "",
             photo: "",
-            friendDifference: 0
+            friendDifference: 1000
         };
 
         var userData = req.body;
-        var userScores = userData.scores;
-        var totalDifference = 0;
+        var userScores = req.body.scores;
+        var totalDifference = userScores.reduce((sum, next) => sum + parseInt(next), 0);
+
+
 
         //Loop through friends object and compare
         for (var i = 0; i < friends.length; i++) {
@@ -52,6 +54,7 @@ module.exports = function(app) {
         friends.push(userData);
 
         res.json(bestFriend);
+        
     });
 
 }

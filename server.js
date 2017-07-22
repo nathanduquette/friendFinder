@@ -9,17 +9,18 @@ var bodyParser = require('body-parser');
 var app  = express();
 var PORT = process.env.PORT || 3000;
 
-// Sets up the Express app to handle data parsing
+// Express uses body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.text());
-app.use(bodyParser.json({type:"application/vnd.api+json"}));
+app.use(bodyParser.json());
+// app.use(bodyParser.json({type:"application/vnd.api+json"}));
 
 // Routes
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-// Starts the server to begin listening
+// Listen
 app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    // console.log("App listening on PORT " + PORT);
 });

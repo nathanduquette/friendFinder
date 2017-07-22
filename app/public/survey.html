@@ -134,7 +134,7 @@
             <hr>
             <footer class="footer">
                 <div class="container">
-                    <p><a href="/data/friends">API Friends List</a> | <a href="git@github.com:nathanduquette/friendFinder.git">GitHub Repo</a></p>
+                    <p><a href="/api/friends">API Friends List</a> | <a href="git@github.com:nathanduquette/friendFinder.git">GitHub Repo</a></p>
                 </div>
             </footer>
         </div>
@@ -179,19 +179,23 @@
         }
         // Grab the form inputs
         $("#submit").on("click", function() {
-            // Form validation
-            function submitForm() {
+            function submitForm(){
                 var isValid = true;
-                $('.form-control').each(function() {
-                    if ($(this).val() === '')
-                        isValid = false;
-                });
-                $('.chosen-select').each(function() {
-                    if ($(this).val() === "")
-                        isValid = false
-                })
                 return isValid;
             }
+            // Form validation
+            // function submitForm() {
+            //     var isValid = true;
+            //     $('.form-control').each(function() {
+            //         if ($(this).val() === '')
+            //             isValid = false;
+            //     });
+            //     $('.chosen-select').each(function() {
+            //         if ($(this).val() === "")
+            //             isValid = false
+            //     })
+            //     return isValid;
+            // }
             // If all required fields are filled
             if (submitForm() == true) {
                 // Create an object for the user's data
@@ -205,10 +209,11 @@
                 // Grab the URL of the website
                 var currentURL = window.location.origin;
                 // AJAX post the newFriend to the friends API.
-                $.post(currentURL + "/data/friends", friends, function() {
+                $.post(currentURL + "/api/friends", friends, function(data) {
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#matchName").text(friends.name);
-                    $('#matchImg').attr("src", friends.photo);
+                    console.log(data);
+                    $("#matchName").text(data.name);
+                    $('#matchImg').attr("src", data.photo);
                     // Show the modal with the best match
                     $("#resultsModal").modal('toggle');
                 });
