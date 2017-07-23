@@ -220,7 +220,8 @@
 
                 $("#name").val("");
                 $("#photo").val("");
-                $(".chosen-select").chosen(".chosen:updated");
+                $(".chosen-select").prop('selectedIndex', 0);
+                $(".chosen-single > span").text('Select an Option');
                 // $("#q1").val("");
                 // $("#q2").val("");
                 // $("#q3").val("");
